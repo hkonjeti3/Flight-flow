@@ -16,15 +16,15 @@ function App() {
 
   // Fetch available airports, carriers, and years
   useEffect(() => {
-    axios.get('https://fa24-i535-hkonjeti-finalprj.uc.r.appspot.com/api/airports')
+    axios.get('https://nice-runner-442919-s8.uc.r.appspot.com/api/airports')
       .then((response) => setAirports(response.data))
       .catch((error) => console.error("Error fetching airports: ", error));
 
-    axios.get('https://fa24-i535-hkonjeti-finalprj.uc.r.appspot.com/api/carriers')
+    axios.get('https://nice-runner-442919-s8.uc.r.appspot.com/api/carriers')
       .then((response) => setCarriers(response.data))
       .catch((error) => console.error("Error fetching carriers: ", error));
 
-    axios.get('https://fa24-i535-hkonjeti-finalprj.uc.r.appspot.com/api/years')
+    axios.get('https://nice-runner-442919-s8.uc.r.appspot.com/api/years')
       .then((response) => setYears(response.data))
       .catch((error) => console.error("Error fetching years: ", error));
   }, []);
@@ -32,11 +32,11 @@ function App() {
   // Fetch delay comparison data when selections change
   useEffect(() => {
     if (selectedAirport && selectedCarrier && selectedYear) {
-      axios.get(`https://fa24-i535-hkonjeti-finalprj.uc.r.appspot.com/api/delay_comparison?airport=${selectedAirport}&carrier=${selectedCarrier}&year=${selectedYear}`)
+      axios.get(`https://nice-runner-442919-s8.uc.r.appspot.com/api/delay_comparison?airport=${selectedAirport}&carrier=${selectedCarrier}&year=${selectedYear}`)
         .then((response) => setDelayData(response.data))
         .catch((error) => console.error("Error fetching delay comparison data: ", error));
 
-      axios.get(`https://fa24-i535-hkonjeti-finalprj.uc.r.appspot.com/api/reddit?airport=${selectedAirport}&carrier=${selectedCarrier}&year=${selectedYear}&delay_reason=carrier_delay`)
+      axios.get(`https://nice-runner-442919-s8.uc.r.appspot.com/api/reddit?airport=${selectedAirport}&carrier=${selectedCarrier}&year=${selectedYear}&delay_reason=carrier_delay`)
         .then((response) => setRedditData(response.data))
         .catch((error) => console.error("Error fetching Reddit data: ", error));
     }
