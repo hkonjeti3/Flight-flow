@@ -27,7 +27,7 @@ reddit = praw.Reddit(
 @app.route('/api/airports', methods=['GET'])
 def get_airports():
     query = """
-    SELECT DISTINCT airport_name FROM `fa24-i535-hkonjeti-finalprj.flight_delay.Flights_data_delay`;
+    SELECT DISTINCT airport_name FROM `nice-runner-442919-s8.flight_delay.Flights_data_delay`;
     """
     try:
         query_job = client.query(query)
@@ -42,7 +42,7 @@ def get_airports():
 @app.route('/api/carriers', methods=['GET'])
 def get_carriers():
     query = """
-    SELECT DISTINCT carrier_name FROM `fa24-i535-hkonjeti-finalprj.flight_delay.Flights_data_delay`;
+    SELECT DISTINCT carrier_name FROM `nice-runner-442919-s8.flight_delay.Flights_data_delay`;
     """
     try:
         query_job = client.query(query)
@@ -57,7 +57,7 @@ def get_carriers():
 @app.route('/api/years', methods=['GET'])
 def get_years():
     query = """
-    SELECT DISTINCT year FROM `fa24-i535-hkonjeti-finalprj.flight_delay.Flights_data_delay`;
+    SELECT DISTINCT year FROM `nice-runner-442919-s8.flight_delay.Flights_data_delay`;
     """
     try:
         query_job = client.query(query)
@@ -86,7 +86,7 @@ def get_delay_comparison():
            AVG(nas_delay) AS nas_delay, 
            AVG(security_delay) AS security_delay, 
            AVG(late_aircraft_delay) AS late_aircraft_delay
-    FROM `fa24-i535-hkonjeti-finalprj.flight_delay.Flights_data_delay`
+    FROM `nice-runner-442919-s8.flight_delay.Flights_data_delay`
     WHERE airport_name = '{airport}' 
           AND carrier_name = '{carrier}' 
           AND year = {year}
