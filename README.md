@@ -12,6 +12,10 @@ The analysis pipeline leverages Google Cloud Platform (GCP) for scalable data pr
 - **Cloud-Native Deployment**: Backend hosted on Google App Engine, frontend deployed on Vercel.  
 - **Comprehensive Visualizations**: Includes monthly, yearly, and cause-specific delay trends.  
 
+## Demo  
+- **Frontend**: [Flight Flow Dashboard](https://flight-flow.vercel.app/)  
+- **GitHub Repository**: [Source Code](https://github.com/hkonjeti3/Flight-flow)
+  
 ## Technology Stack  
 - **Cloud Platform**: Google Cloud Platform (BigQuery, App Engine, Cloud Storage)  
 - **Backend**: Flask  
@@ -76,6 +80,4 @@ cd Flight-flow
   - Comparison of delays across airlines and airports.  
  
 
-## Demo  
-- **Frontend**: [Flight Flow Dashboard](https://flight-flow.vercel.app/)  
-- **GitHub Repository**: [Source Code](https://github.com/hkonjeti3/Flight-flow)  
+
